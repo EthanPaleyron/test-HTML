@@ -9,14 +9,34 @@
 </head>
 
 <body>
-
+  <!-- change images without using media query -->
   <picture>
-    <source srcset="img/pexels-bess-hamiti-36487.jpg" media="(min-width: 900px)">
-    <source srcset="img/perceptual-standard.jpg" media="(min-width: 600px)">
-    <img src="img/image-attractive.jpg" alt="img">
+    <source srcset="public/pexels-bess-hamiti-36487.jpg" media="(min-width: 900px)">
+    <source srcset="public/perceptual-standard.jpg" media="(min-width: 600px)">
+    <img style="width: 35rem" src="public/image-attractive.jpg" alt="img">
   </picture>
 
-  <!-- SANS L'AIDE DU MEDIA QUERY -->
+  <!-- The <map> element contains a number of <area> elements, which define the hotspots in the graphics card. -->
+  <img src="public/cubes.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+  <map name="planetmap">
+    <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+    <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+    <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+  </map>
+
+  <!-- The HTML5 <canvas> element is used to draw graphics, on the fly, through of scripts -->
+  <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #d3d3d3">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+  <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+  </script>
+
+  <input type="hidden" name="country" value="Norway">
 
   <script type="module" src="/main.js"></script>
 </body>
